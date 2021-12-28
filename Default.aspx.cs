@@ -78,6 +78,8 @@ namespace Practica1
                     }
 
                     labelError.Visible = false;
+                    labelNotCorrectInsertUser.Visible = false;
+                    labelCorrectInsertUser.Visible = false;
                 }
             }
         }
@@ -101,27 +103,27 @@ namespace Practica1
                     cmd.Parameters.AddWithValue("@User", textBoxUser.Text.Trim());
                     cmd.Parameters.AddWithValue("@Password", textBoxPassword.Text.Trim());
                     conn.Open();
-                    cmd.ExecuteNonQuery();
                     var dt = new DataTable();
                     var da = new SqlDataAdapter(cmd);
-                    da.Fill(dt);
+                    da.Fill(dt); //execute
 
                     if (dt.Rows.Count == 0)
                     {
-                        labelNotCorrectInsertUser.Visible = true;
-                        labelCorrectInsertUser.Visible = false;
+                        labelNotCorrectInsertUser.Visible = false;
+                        labelCorrectInsertUser.Visible = true;
 
                     }
                     else
                     {
-                        labelNotCorrectInsertUser.Visible = false;
-                        labelCorrectInsertUser.Visible = true; 
+                        labelNotCorrectInsertUser.Visible = true;
+                        labelCorrectInsertUser.Visible = false; 
 
                     }
 
                     labelNotCorrectLogin.Visible = false;
                     labelCorrectLogin.Visible = false;
                     labelError.Visible = false;
+                    labelCorrectLogin.Visible = false;
                 }
             }
         }
