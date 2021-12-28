@@ -124,9 +124,8 @@ namespace Practica1
                     labelCorrectLogin.Visible = false;
                     labelError.Visible = false;
                     labelCorrectLogin.Visible = false;
-                    labelCorrectLogin.Visible = false;
                 }
-            } 
+            }
         }
 
         protected void ClickSubmit(object sender, EventArgs e)
