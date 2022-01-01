@@ -34,7 +34,7 @@
                 <asp:Label runat="server" ID="labelCorrectLogin" Text="Correct login" Visible="false" ForeColor="#33cc33"></asp:Label>
                 <asp:Label runat="server" ID="labelNotCorrectLogin" Text="Fail login" Visible="false" ForeColor="#ff3300"></asp:Label>
                 <asp:Label runat="server" ID="labelCorrectInsertUser" Text="Correct Create" Visible="false" ForeColor="#33cc33"></asp:Label>
-                <asp:Label runat="server" ID="labelNotCorrectInsertUser" Text="Fail Create new User" Visible="false" ForeColor="#ff3300"></asp:Label>
+                <asp:Label runat="server" ID="labelNotCorrectInsertUser" Text="User already exists" Visible="false" ForeColor="#ff3300"></asp:Label>
                 <asp:TextBox ID="comprobarUser" runat="server" Visible="false"></asp:TextBox>
                 <asp:TextBox ID="comprobarPassword" runat="server" Visible="false"></asp:TextBox>
             </asp:TableCell>

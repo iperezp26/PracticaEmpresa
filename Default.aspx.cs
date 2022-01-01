@@ -74,7 +74,8 @@ namespace Practica1
                     {
                         labelNotCorrectLogin.Visible = false;
                         labelCorrectLogin.Visible = true;
-                        
+                        Session["user"] = textBoxUser.Text.Trim().ToString();
+                        Response.Redirect("Contact.aspx");
                     }
 
                     labelError.Visible = false;
@@ -109,6 +110,7 @@ namespace Practica1
 
                     if (dt.Rows.Count == 0)
                     {
+
                         labelNotCorrectInsertUser.Visible = false;
                         labelCorrectInsertUser.Visible = true;
 
