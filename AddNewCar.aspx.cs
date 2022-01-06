@@ -39,7 +39,7 @@ namespace Practica1
             }
             else
             {
-                LabelCorrect.Visible = false; 
+                LabelCorrect.Visible = false;
                 LabelIncorrectInsert.Visible = true;
 
             }
