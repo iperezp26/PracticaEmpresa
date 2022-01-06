@@ -3,22 +3,23 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Coches Disponibles.</h2>
     <asp:Button ID="AddNewCar" runat="server" CssClass="btn-primary" Height="21px" Text="Add New Car" Width="100px" OnClick="AddNewCar_Click" />
-    <asp:GridView runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Width="496px">
-        <AlternatingRowStyle BackColor="White" />
+    <asp:GridView ID="carsDashboard" runat="server" AutoGenerateColumns="False" CellPadding="3" DataSourceID="SqlDataSource1" Width="496px" AllowSorting="True" 
+        BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" OnSelectedIndexChanged="carsDashboard_SelectedIndexChanged" >
         <Columns>
-            <asp:BoundField DataField="carId" HeaderText="carId" SortExpression="carId" />
-            <asp:BoundField DataField="make" HeaderText="make" SortExpression="make" />
-            <asp:BoundField DataField="model" HeaderText="model" SortExpression="model" />
+            <asp:CommandField ShowSelectButton="True" />
+            <asp:BoundField DataField="carId" HeaderText="Plate" SortExpression="carId" />
+            <asp:BoundField DataField="make" HeaderText="Make" SortExpression="make" />
+            <asp:BoundField DataField="model" HeaderText="Model" SortExpression="model" />
         </Columns>
-        <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
-        <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
-        <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
-        <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
-        <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
-        <SortedAscendingCellStyle BackColor="#FDF5AC" />
-        <SortedAscendingHeaderStyle BackColor="#4D0000" />
-        <SortedDescendingCellStyle BackColor="#FCF6C0" />
-        <SortedDescendingHeaderStyle BackColor="#820000" />
+        <FooterStyle BackColor="White" ForeColor="#000066" />
+        <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
+        <RowStyle ForeColor="#000066" />
+        <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
+        <SortedAscendingCellStyle BackColor="#F1F1F1" />
+        <SortedAscendingHeaderStyle BackColor="#007DBB" />
+        <SortedDescendingCellStyle BackColor="#CAC9C9" />
+        <SortedDescendingHeaderStyle BackColor="#00547E" />
     </asp:GridView>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PracticasConnectionString %>" OnSelecting="SqlDataSource1_Selecting" SelectCommand="SELECT [make], [model], [carId] FROM [CarsTable] WHERE ([available] = @available) ORDER BY [make], [model], [carId]">
         <SelectParameters>

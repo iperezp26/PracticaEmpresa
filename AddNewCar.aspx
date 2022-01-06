@@ -39,7 +39,11 @@
     <asp:Label ID="LabelIncorrectInsert" runat="server" Font-Size="Large" Visible="false" ForeColor="Red" Text="Incorrect Insert"></asp:Label>
     <asp:Label ID="LabelCorrect" runat="server" Font-Size="Large" Visible="false" ForeColor="Green" Text="Insert Correct"></asp:Label>
     <p>
-        <label style="width:731px"></label>
+        <label style="width:731px">
+        <asp:Button ID="Button1" runat="server" CssClass="btn-primary focus" OnClick="Button1_Click" Text="Back/Cancel" />
+        </label>
         <asp:Button ID="Submit" runat="server" Text="Submit" Width="127px" CssClass="btn-primary" OnClick="Submit_Click" />
     </p>
+    <p>
+        &nbsp;</p>
 </asp:Content>
