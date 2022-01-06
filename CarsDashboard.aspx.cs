@@ -13,5 +13,15 @@ namespace Practica1
         {
 
         }
+
+        protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
+        }
+
+        protected void AddNewCar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AddNewCar.aspx");
+;        }
     }
 }

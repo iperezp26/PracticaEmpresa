@@ -17,7 +17,7 @@ namespace Practica1
 
         }
 
-        public void guardar()
+        /*public void guardar()
         {
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["connDB"].ConnectionString))
             {
@@ -38,7 +38,7 @@ namespace Practica1
                     comprobarPassword.Text = dt.Rows[0]["password"].ToString();
                 }
             }
-        }
+        }*/
 
         public void comprobar()
         {
@@ -59,7 +59,6 @@ namespace Practica1
                     cmd.Parameters.AddWithValue("@User", textBoxUser.Text.Trim());
                     cmd.Parameters.AddWithValue("@Password", textBoxPassword.Text.Trim());
                     conn.Open();
-                    cmd.ExecuteNonQuery();
                     var dt = new DataTable();
                     var da = new SqlDataAdapter(cmd);
                     da.Fill(dt);
