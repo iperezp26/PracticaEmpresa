@@ -26,7 +26,7 @@ namespace Practica1
 
         protected void carsDashboard_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TextBox1.Text = carsDashboard.SelectedRow.Cells[1].Text.ToString();
+            
             
         }
     }
