@@ -5,6 +5,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Add New Car</h2>
+    <p>&nbsp;</p>
     <dx:BootstrapFormLayout ID="BootstrapFormLayout1" runat="server" AlignItemCaptionsInAllGroups="True" DataSourceID="SqlDataSource">
         <Items>
             <dx:BootstrapLayoutItem Caption="Car Id">
