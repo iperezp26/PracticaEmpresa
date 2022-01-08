@@ -37,7 +37,7 @@
 
     <asp:SqlDataSource ID="SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:PracticasConnectionString %>" SelectCommand="SELECT [carId], [make], [model] FROM [CarsTable]"></asp:SqlDataSource>
      <label style="width:700px"></label>
-    <asp:Label ID="LabelIncorrectInsert" runat="server" Font-Size="Large" Visible="false" ForeColor="Red" Text="Incorrect Insert"></asp:Label>
+    <asp:Label ID="LabelIncorrectInsert" runat="server" Font-Size="Large" Visible="False" ForeColor="Red" Text="Plate already exists"></asp:Label>
     <asp:Label ID="LabelCorrect" runat="server" Font-Size="Large" Visible="false" ForeColor="Green" Text="Insert Correct"></asp:Label>
     <p>
         <label style="width:731px">
