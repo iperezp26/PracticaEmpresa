@@ -96,6 +96,24 @@ namespace Practica1
         protected global::System.Web.UI.WebControls.TextBox TextBoxModel;
 
         /// <summary>
+        /// Control LabelReservedBy.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelReservedBy;
+
+        /// <summary>
+        /// Control TextBoxReservedBy.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxReservedBy;
+
+        /// <summary>
         /// Control LabelAvailable.
         /// </summary>
         /// <remarks>
@@ -121,6 +139,24 @@ namespace Practica1
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image ImageNotAvailable;
+
+        /// <summary>
+        /// Control Reserve.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Reserve;
+
+        /// <summary>
+        /// Control Liberate.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Liberate;
 
         /// <summary>
         /// Control SqlDataSource1.

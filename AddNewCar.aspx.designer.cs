@@ -11,7 +11,7 @@ namespace Practica1
 {
 
 
-    public partial class About
+    public partial class AddNewCar
     {
 
         /// <summary>

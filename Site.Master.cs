@@ -11,7 +11,19 @@ namespace Practica1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if ((string)HttpContext.Current.Session["user"] != null)
+            {
+                user.Text = "User: " + (string)HttpContext.Current.Session["user"];
+                LogOutLinkButton.Visible = true;
+            }
+            else
+                LogOutLinkButton.Visible = false;
+        }
 
+        protected void LogOutLinkButton_Click(object sender, EventArgs e)
+        {
+                Session.Clear();
+                Response.Redirect("Default.aspx");
         }
     }
 }

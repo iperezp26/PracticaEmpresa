@@ -40,15 +40,20 @@
         </asp:ScriptManager>
 
         <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container"> 
-            </div>
+            <div class="container">
+                <br />
+                <asp:Label runat="server" Width="80%"></asp:Label>
+                <asp:label id="user" runat="server" ForeColor="White" Height="16px" Width="83px" ></asp:label>
+                <asp:LinkButton ID="LogOutLinkButton" runat="server" OnClick="LogOutLinkButton_Click" Visible="false" >Log out</asp:LinkButton>
+                <br />
+                </div>
         </div>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Mi aplicación ASP.NET</p>
+                <p>&copy; <%: DateTime.Now.Year %> - Aplicación ASP.NET</p>
             </footer>
         </div>
 

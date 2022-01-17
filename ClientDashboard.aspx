@@ -1,50 +1,36 @@
-﻿<%@ Page Title="About" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ClientDashboard.aspx.cs" Inherits="Practica1.About" %>
+﻿<%@ Page Title="About" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ClientDashboard.aspx.cs" Inherits="Practica1.ClientDashboard" %>
 
 <%@ Register Assembly="DevExpress.Web.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <%@ Register Assembly="DevExpress.Web.Bootstrap.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.Bootstrap" TagPrefix="dx" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Add New Car</h2>
-    <p>&nbsp;</p>
-    <dx:BootstrapFormLayout ID="BootstrapFormLayout1" runat="server" AlignItemCaptionsInAllGroups="True" DataSourceID="SqlDataSource">
-        <Items>
-            <dx:BootstrapLayoutItem Caption="Car Id">
-                <ContentCollection>
-                    <dx:ContentControl runat="server">
-                        <dx:BootstrapTextBox ID="carId" runat="server">
-                        </dx:BootstrapTextBox>
-                    </dx:ContentControl>
-                </ContentCollection>
-            </dx:BootstrapLayoutItem>
-            <dx:BootstrapLayoutItem Caption="Make">
-                <ContentCollection>
-                    <dx:ContentControl runat="server">
-                        <dx:BootstrapTextBox ID="make" runat="server">
-                        </dx:BootstrapTextBox>
-                    </dx:ContentControl>
-                </ContentCollection>
-            </dx:BootstrapLayoutItem>
-            <dx:BootstrapLayoutItem Caption="Model">
-                <ContentCollection>
-                    <dx:ContentControl runat="server">
-                        <dx:BootstrapTextBox ID="model" runat="server">
-                        </dx:BootstrapTextBox>
-                    </dx:ContentControl>
-                </ContentCollection>
-            </dx:BootstrapLayoutItem>
-        </Items>
-    </dx:BootstrapFormLayout>
+    <h2>Reserve a car</h2>
+    <p>
+        <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" DataSourceID="SqlDataSource1" Width="372px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+            <Columns>
+                <asp:CommandField ShowSelectButton="True" />
+                <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
+                <asp:BoundField DataField="address" HeaderText="address" SortExpression="address" />
+                <asp:BoundField DataField="mobile" HeaderText="mobile" SortExpression="mobile" />
+            </Columns>
+            <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
+            <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" HorizontalAlign="Center" Width="100px" />
+            <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
+            <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" HorizontalAlign="Center" />
+            <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
+            <SortedAscendingCellStyle BackColor="#FFF1D4" />
+            <SortedAscendingHeaderStyle BackColor="#B95C30" />
+            <SortedDescendingCellStyle BackColor="#F1E5CE" />
+            <SortedDescendingHeaderStyle BackColor="#93451F" />
 
-    <asp:SqlDataSource ID="SqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:PracticasConnectionString %>" SelectCommand="SELECT [carId], [make], [model] FROM [CarsTable]"></asp:SqlDataSource>
-     <label style="width:700px"></label>
-    <asp:Label ID="LabelIncorrectInsert" runat="server" Font-Size="Large" Visible="False" ForeColor="Red" Text="Plate already exists"></asp:Label>
-    <asp:Label ID="LabelCorrect" runat="server" Font-Size="Large" Visible="false" ForeColor="Green" Text="Insert Correct"></asp:Label>
-    <p>
-        <label style="width:731px">
-        <asp:Button ID="Button1" runat="server" CssClass="btn-primary focus" OnClick="Button1_Click" Text="Back/Cancel" />
-        </label>
-        <asp:Button ID="Submit" runat="server" Text="Submit" Width="127px" CssClass="btn-primary" OnClick="Submit_Click" />
+        </asp:GridView>
     </p>
+    <asp:Label ID="Confirmation" runat="server" ></asp:Label>
+    <label></label>
+    <asp:Button ID="ConfirmationButton" Text="Yes" runat="server" Width="50px" Visible="false" OnClick="ConfirmationButton_Click" />
+    <label></label>
+    <asp:Button ID="NotConfirmationButton" Text="No" runat="server" Width="50px" Visible="false" OnClick="NotConfirmationButton_Click"/>
     <p>
-        &nbsp;</p>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PracticasConnectionString %>" SelectCommand="SELECT [name], [address], [mobile] FROM [customer] ORDER BY [name], [address], [id]"></asp:SqlDataSource>
+    </p>
 </asp:Content>

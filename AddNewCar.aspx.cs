@@ -11,7 +11,7 @@ using System.Data;
 
 namespace Practica1
 {
-    public partial class About : Page
+    public partial class AddNewCar : Page
     {
         SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["connDB"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
@@ -41,7 +41,6 @@ namespace Practica1
             {
                 LabelCorrect.Visible = false;
                 LabelIncorrectInsert.Visible = true;
-
             }
 
 
