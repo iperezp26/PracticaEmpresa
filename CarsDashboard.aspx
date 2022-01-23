@@ -22,7 +22,7 @@
                         <asp:BoundField DataField="carId" HeaderText="Plate" SortExpression="carId" />
                         <asp:BoundField DataField="make" HeaderText="Make" SortExpression="make" />
                         <asp:BoundField DataField="model" HeaderText="Model" SortExpression="model" />
-                        <asp:BoundField DataField="reservedBy" HeaderText="reservedBy" SortExpression="reservedBy" />
+                        <asp:BoundField DataField="reservedBy" HeaderText="Reserved By" SortExpression="reservedBy" />
                         <asp:CheckBoxField DataField="available" HeaderText="Available" SortExpression="available" Visible="True" />
                     </Columns>
                     <EditRowStyle HorizontalAlign="Center" />
@@ -91,10 +91,6 @@
             </td>
         </tr>
     </table>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PracticasConnectionString %>" OnSelecting="SqlDataSource1_Selecting" SelectCommand="SELECT [available],[make], [model], [carId],[reservedBy] FROM [CarsTable] ORDER BY [make], [model], [carId]">
-        <SelectParameters>
-            <asp:Parameter DefaultValue="true" Name="available" Type="Boolean" />
-        </SelectParameters>
-    </asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PracticasEmpresaConnectionString %>" OnSelecting="SqlDataSource1_Selecting" SelectCommand="SELECT [carId], [make], [model], [available], [reservedBy] FROM [CarsTable] ORDER BY [carId], [make], [model]"></asp:SqlDataSource>
     <br />
 </asp:Content>

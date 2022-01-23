@@ -12,7 +12,7 @@ namespace Practica1
 {
     public partial class Contact : Page
     {
-        SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["connDB"].ConnectionString);
+        SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["connAZ"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
             HttpContext context = HttpContext.Current;
