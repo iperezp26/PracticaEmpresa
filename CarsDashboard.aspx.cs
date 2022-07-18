@@ -12,7 +12,7 @@ namespace Practica1
 {
     public partial class Contact : Page
     {
-        SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["connAZ"].ConnectionString);
+        SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["connDB"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
             HttpContext context = HttpContext.Current;
@@ -73,6 +73,7 @@ namespace Practica1
         }
         protected void Liberate_Click(object sender, EventArgs e)
         {
+            var rnd = new Random();
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.CommandText = "LiberateCar";
@@ -82,7 +83,24 @@ namespace Practica1
             var dt = new DataTable();
             var da = new SqlDataAdapter(cmd);
             da.Fill(dt); //execute
+            conn.Close();
+            SqlCommand cmd2 = new SqlCommand();
+            cmd2.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd2.CommandText = "insertPay";
+            cmd2.Connection = conn;
+            cmd2.Parameters.AddWithValue("@Email", carsDashboard.SelectedRow.Cells[4].Text);
+            cmd2.Parameters.AddWithValue("@Money", rnd.Next(1200));
+            conn.Open();
+            var dt2 = new DataTable();
+            var da2 = new SqlDataAdapter(cmd2);
+            da2.Fill(dt2); //execute
+            conn.Close();
             Response.Redirect("CarsDashboard.aspx");
+        }
+
+        protected void directionsButton(object sender, EventArgs e)
+        {
+            Response.Redirect("PayDay.aspx");
         }
     }
 }

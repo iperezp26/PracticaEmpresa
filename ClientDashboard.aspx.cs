@@ -14,7 +14,8 @@ namespace Practica1
     public partial class ClientDashboard : Page
     {
         HttpContext context = HttpContext.Current;
-        SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["connAZ"].ConnectionString);
+        SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["connDB"].ConnectionString);
+
         string Plate;
         string Make;
         string Model;
@@ -96,6 +97,11 @@ namespace Practica1
                 Error.Text = "Error, User already exists";
                 Error.ForeColor = System.Drawing.Color.Red;
             }
+
+        }
+
+        protected void SqlDataSource2_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
 
         }
     }

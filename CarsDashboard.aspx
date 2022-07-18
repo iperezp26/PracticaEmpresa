@@ -9,6 +9,7 @@
         <tr>
             <td>
                 <asp:Button ID="AddNewCar" runat="server" CssClass="btn-primary" Height="21px" Text="Add New Car" Width="100px" OnClick="AddNewCar_Click" />
+                <asp:Button ID="AddNewCar0" runat="server" CssClass="btn-primary" Height="21px" Text="PayDay" Width="100px" OnClick="directionsButton" />
                 <br />
                 <br />
             </td>
@@ -91,6 +92,6 @@
             </td>
         </tr>
     </table>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PracticasEmpresaConnectionString %>" OnSelecting="SqlDataSource1_Selecting" SelectCommand="SELECT [carId], [make], [model], [available], [reservedBy] FROM [CarsTable] ORDER BY [carId], [make], [model]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PracticasConnectionString %>" OnSelecting="SqlDataSource1_Selecting" SelectCommand="SELECT [carId], [make], [model], [available], [reservedBy] FROM [CarsTable] ORDER BY [carId], [make], [model]"></asp:SqlDataSource>
     <br />
 </asp:Content>

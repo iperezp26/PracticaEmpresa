@@ -13,7 +13,7 @@ namespace Practica1
 {
     public partial class AddNewCar : Page
     {
-        SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["connAZ"].ConnectionString);
+        SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["connDB"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
             

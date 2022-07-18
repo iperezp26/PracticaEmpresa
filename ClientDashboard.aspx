@@ -35,7 +35,7 @@
         </Items>
     </dx:BootstrapFormLayout>
     <p>
-        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PracticasEmpresaConnectionString %>" SelectCommand="SELECT [name], [address], [mobile] FROM [customer]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:PracticasConnectionString %>" SelectCommand="SELECT [name], [address], [mobile] FROM [customer]" OnSelecting="SqlDataSource2_Selecting"></asp:SqlDataSource>
     </p>
     <p>
         <asp:Label ID="Error" runat="server" ForeColor="#FF3300" Text="Error, User already exists" Visible="false"></asp:Label>
@@ -64,7 +64,7 @@
             <SortedDescendingHeaderStyle BackColor="#93451F" />
 
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PracticasEmpresaConnectionString %>" SelectCommand="SELECT [name], [address], [mobile] FROM [customer] ORDER BY [name], [address], [mobile]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PracticasConnectionString %>" SelectCommand="SELECT * FROM [customer]"></asp:SqlDataSource>
     </p>
     <asp:Label ID="Confirmation" runat="server" ></asp:Label>
     <label></label>

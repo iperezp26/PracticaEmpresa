@@ -48,7 +48,7 @@ namespace Practica1
             }
             else
             {
-                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["connAZ"].ConnectionString))
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["connDB"].ConnectionString))
                 {
 
 
